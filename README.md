@@ -80,3 +80,4 @@ The default credentials for the web interface are: `admin` / `admin`
 
 # Reference
 https://github.com/jhuckaby/Cronicle
+https://github.com/belsander/docker-cronicle
