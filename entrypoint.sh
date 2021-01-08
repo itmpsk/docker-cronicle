@@ -2,7 +2,7 @@
 
 ROOT_DIR=/opt/cronicle
 CONF_DIR=$ROOT_DIR/conf
-BIN_DIR=$ROOT_DIR/bin
+export BIN_DIR=$ROOT_DIR/bin
 LIB_DIR=$ROOT_DIR/lib
 # DATA_DIR needs to be the same as the exposed Docker volume in Dockerfile
 DATA_DIR=$ROOT_DIR/data
@@ -35,5 +35,11 @@ then
   touch $DATA_DIR/.setup_done
 fi
 
+#TODO debug level modification 
+#sed -i 's/"debug_level": 9,/"debug_level": 5,/g' sample_conf/config.json
+
+# change filesystem permissions
+chown -R cronicle:cronicle /opt/cronicle/
+
 # Run cronicle
-exec "$@"
+exec su cronicle -c "$@"
