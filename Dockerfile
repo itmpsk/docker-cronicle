@@ -34,6 +34,6 @@ EXPOSE     3012
 # data volume is also configured in entrypoint.sh
 VOLUME     ["/opt/cronicle/data", "/opt/cronicle/logs", "/opt/cronicle/plugins"]
 
-ENTRYPOINT ["/sbin/tini", "--"]
+ENTRYPOINT ["/entrypoint.sh"]
 
-CMD        ["sh", "/entrypoint.sh"]
+CMD        ["/usr/local/bin/node", "$LIB_DIR/main.js"]

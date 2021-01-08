@@ -36,4 +36,4 @@ then
 fi
 
 # Run cronicle
-/usr/local/bin/node "$LIB_DIR/main.js"
+exec "$@"
