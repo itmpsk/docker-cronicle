@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 ROOT_DIR=/opt/cronicle
 CONF_DIR=$ROOT_DIR/conf

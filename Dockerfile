@@ -29,6 +29,8 @@ RUN        curl -L "https://github.com/jhuckaby/Cronicle/archive/v${CRONICLE_VER
 
 ADD        entrypoint.sh /entrypoint.sh
 
+RUN        chmod +x /entrypoint.sh
+
 EXPOSE     3012
 
 # data volume is also configured in entrypoint.sh
