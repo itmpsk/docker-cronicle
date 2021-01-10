@@ -22,7 +22,7 @@ RUN         curl -L https://github.com/jhuckaby/Cronicle/archive/v${CRONICLE_VER
              npm install && \
              node bin/build.js dist
 
-EXPOSE      3012 3443
+EXPOSE      3012
 
 ADD         entrypoint.sh /opt/cronicle/entrypoint.sh
 
