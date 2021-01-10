@@ -34,5 +34,5 @@ VOLUME      ["/opt/cronicle/data", "/opt/cronicle/logs", "/opt/cronicle/plugins"
 
 ENTRYPOINT  ["/opt/cronicle/entrypoint.sh"]
 
-CMD         ["sh", "-c", "$BIN_DIR/control.sh start"]
+CMD         ["sh", "-c", "node /opt/cronicle/lib/main.js"]
 
