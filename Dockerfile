@@ -12,8 +12,7 @@ ENV        CRONICLE_server_comm_use_hostnames 1
 ENV        CRONICLE_web_direct_connect 0
 #ENV        CRONICLE_socket_io_transports '["polling", "websocket"]'
 
-RUN         apk add --no-cache git curl wget perl bash perl-pathtools tar \
-             procps tini
+RUN         apk add --no-cache git curl wget perl bash perl-pathtools tar procps
 
 RUN         adduser cronicle -D -h /opt/cronicle
 
