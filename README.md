@@ -38,7 +38,7 @@ The web UI will be available at: http://localhost:3012
 > e.g `docker run --name cronicle --hostname cronicle-host -p 3012:3012 -e CRONICLE_base_app_url='http://cronicle-host:3012' itmpsk/cronicle:latest`
 
 ## Volumes
-Cronicle process runs under the `cronicle` user with `ID 1001` and `GUID `1001`.  If you are using Docker bind mounts set permissions accordingly.
+Cronicle process runs under the `cronicle` user with `ID 1001` and `GUID 1001`.  If you are using Docker bind mounts set permissions accordingly.
 
 | Path | Description |
 |--------|--------|
@@ -79,5 +79,5 @@ and restart the Docker container:
 The default credentials for the web interface are: `admin` / `admin`
 
 # Reference
-https://github.com/jhuckaby/Cronicle
+https://github.com/jhuckaby/Cronicle  
 https://github.com/belsander/docker-cronicle
