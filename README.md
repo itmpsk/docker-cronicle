@@ -14,12 +14,12 @@ Latest version of Cronicle server based upon nodejs Docker image.
 
 ## Install
 ```sh
-docker pull itmpsk/cronicle:latest
+docker pull itmpsk/cronicle:pg-latest
 ```
 
 ## Running
 ```sh
-docker run --name cronicle --hostname localhost -p 3012:3012 itmpsk/cronicle:latest
+docker run --name cronicle --hostname localhost -p 3012:3012 itmpsk/cronicle:pg-latest
 ```
 
 Alternatively with persistent data and logs:
@@ -27,7 +27,7 @@ Alternatively with persistent data and logs:
 docker run --name cronicle \
   -v /path-to-cronicle-storage/data:/opt/cronicle/data:rw \
   -v /path-to-cronicle-storage/logs:/opt/cronicle/logs:rw \
-  --hostname localhost -p 3012:3012 itmpsk/cronicle:latest
+  --hostname localhost -p 3012:3012 itmpsk/cronicle:pg-latest
 ```
 
 The web UI will be available at: http://localhost:3012
@@ -35,7 +35,7 @@ The web UI will be available at: http://localhost:3012
 > NOTE: please replace the hostname `localhost`, this is only for testing
 > purposes! If you rename the hostname also consider setting the environmental
 > variable `CRONICLE_base_app_url`.
-> e.g `docker run --name cronicle --hostname cronicle-host -p 3012:3012 -e CRONICLE_base_app_url='http://cronicle-host:3012' itmpsk/cronicle:latest`
+> e.g `docker run --name cronicle --hostname cronicle-host -p 3012:3012 -e CRONICLE_base_app_url='http://cronicle-host:3012' itmpsk/cronicle:pg-latest`
 
 ## Volumes
 Cronicle process runs under the `cronicle` user with `ID 1001` and `GUID 1001`.  If you are using Docker bind mounts set permissions accordingly.
