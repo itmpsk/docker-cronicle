@@ -12,6 +12,7 @@ ENV        CRONICLE_server_comm_use_hostnames 1
 ENV        CRONICLE_web_direct_connect 0
 ENV        CRONICLE_job_data_expire_days 30
 ENV        CRONICLE_debug_level 5
+ENV        CRONICLE_list_row_max 10000
 #ENV        CRONICLE_socket_io_transports '["polling", "websocket"]'
 ENV        TZ Europe/Bratislava
 
