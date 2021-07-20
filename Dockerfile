@@ -28,7 +28,10 @@ EXPOSE      3012
 
 ADD         entrypoint.sh /opt/cronicle/entrypoint.sh
 
-RUN         chmod +x /opt/cronicle/entrypoint.sh
+RUN         chmod +x /opt/cronicle/entrypoint.sh && \
+            chown -R cronicle:cronicle /opt/cronicle/
+
+USER        cronicle
 
 # data volume is also configured in entrypoint.sh
 VOLUME      ["/opt/cronicle/data", "/opt/cronicle/logs", "/opt/cronicle/plugins"]
