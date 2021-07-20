@@ -37,6 +37,9 @@ jq '.job_data_expire_days = '\"$CRONICLE_job_data_expire_days\"'' $CONF_DIR/conf
 
 if [ -f $DATA_DIR/config.json.import ]
 then
+
+  chown -R cronicle:cronicle $CONF_DIR
+  
   # Move in custom configuration
   cp $DATA_DIR/config.json.import $CONF_DIR/config.json
 fi
