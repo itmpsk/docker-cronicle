@@ -42,4 +42,4 @@ then
 fi
 
 # Run cronicle
-exec su cronicle -c "$@"
+exec "$@"
