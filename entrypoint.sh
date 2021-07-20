@@ -22,20 +22,20 @@ then
 
   cp $CONF_DIR/config.json $CONF_DIR/config.json.origin
 
-  if [ -f $DATA_DIR/config.json.import ]
-  then
-    # Move in custom configuration
-    cp $DATA_DIR/config.json.import $CONF_DIR/config.json
-  fi
-
-  # Create plugins directory
   mkdir -p $PLUGINS_DIR
 
-  # Marking setup done
   touch $DATA_DIR/.setup_done
+
 fi
 
-# change filesystem permissions
+cat <<< $(jq '.job_data_expire_days = '\"$CRONICLE_job_data_expire_days\"'' $CONF_DIR/config.json) > $CONF_DIR/config.json
+
+if [ -f $DATA_DIR/config.json.import ]
+then
+  # Move in custom configuration
+  cp $DATA_DIR/config.json.import $CONF_DIR/config.json
+fi
+
 chown -R cronicle:cronicle /opt/cronicle/
 
 # Run cronicle

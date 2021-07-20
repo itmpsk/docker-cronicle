@@ -10,10 +10,11 @@ ENV        CRONICLE_WebServer__https_port 443
 ENV        CRONICLE_web_socket_use_hostnames 1
 ENV        CRONICLE_server_comm_use_hostnames 1
 ENV        CRONICLE_web_direct_connect 0
+ENV        CRONICLE_job_data_expire_days 30
 #ENV        CRONICLE_socket_io_transports '["polling", "websocket"]'
 ENV        TZ Europe/Bratislava
 
-RUN         apk add --no-cache git curl wget perl bash perl-pathtools tar procps tzdata
+RUN         apk add --no-cache jq git curl wget perl bash perl-pathtools tar procps tzdata
 
 RUN         adduser cronicle -D -h /opt/cronicle
 
