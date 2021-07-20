@@ -26,8 +26,6 @@ then
 
   touch $DATA_DIR/.setup_done
 
-  chown -R cronicle:cronicle /opt/cronicle/
-
 fi
 
 tmp=$(mktemp)
@@ -40,6 +38,7 @@ then
   cp $DATA_DIR/config.json.import $CONF_DIR/config.json
 fi
 
+chown -R cronicle:cronicle /opt/cronicle/
 
 # Run cronicle
 exec su cronicle -c "$@"
