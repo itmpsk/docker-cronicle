@@ -28,7 +28,9 @@ then
 
 fi
 
-cat <<< $(jq '.job_data_expire_days = '\"$CRONICLE_job_data_expire_days\"'' $CONF_DIR/config.json) > $CONF_DIR/config.json
+tmp=$(mktemp)
+jq '.job_data_expire_days = '\"$CRONICLE_job_data_expire_days\"'' $CONF_DIR/config.json > "$tmp" && mv "$tmp" $CONF_DIR/config.json
+
 
 if [ -f $DATA_DIR/config.json.import ]
 then
