@@ -1,4 +1,4 @@
-FROM        node:12-alpine
+FROM        node:12-alpine3.14
 LABEL       maintainer="Martin Paserba <info@itmp.sk>"
 
 ARG         CRONICLE_VERSION='0.8.54'
@@ -16,7 +16,7 @@ ENV        CRONICLE_list_row_max 10000
 #ENV        CRONICLE_socket_io_transports '["polling", "websocket"]'
 ENV        TZ Europe/Bratislava
 
-RUN         apk add --no-cache jq git curl wget perl bash perl-pathtools tar procps tzdata
+RUN         apk add --no-cache jq git curl wget perl bash perl-pathtools tar procps tzdata postgresql-client
 
 RUN         adduser cronicle -D -h /opt/cronicle
 
