@@ -5,7 +5,7 @@ Docker container for a Cronicle single-server master node
 # Supported tags
 
 * `0.8.54` [Dockerfile](https://github.com/itmpsk/docker-cronicle/blob/0.8.54/README.md)
-* `0.9.0` [Dockerfile](https://github.com/itmpsk/docker-cronicle/blob/0.9.0/README.md)
+* `0.9.1` [Dockerfile](https://github.com/itmpsk/docker-cronicle/blob/0.9.1/README.md)
 
 ## latest
 Latest version of Cronicle server based upon nodejs Docker image.
