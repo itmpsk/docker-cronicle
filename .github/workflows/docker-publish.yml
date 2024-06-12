@@ -42,7 +42,7 @@ jobs:
         echo "Updating Docker Hub README"
         README_CONTENT=$(cat README.md)
         TOKEN=$(curl -s -H "Content-Type: application/json" -X POST -d '{"username": "'"$DOCKER_USERNAME"'", "password": "'"$DOCKER_PASSWORD"'"}' https://hub.docker.com/v2/users/login/ | jq -r .token)
-        curl -s -H "Authorization: JWT $TOKEN" -X PATCH --data-urlencode full_description="$README_CONTENT" https://hub.docker.com/v2/repositories/$DOCKER_REPO/
+        curl -s -H "Authorization: JWT $TOKEN" -H "Content-Type: application/json" -X PATCH -d '{"full_description": "'"${README_CONTENT//\"/\\\"}"'"}' https://hub.docker.com/v2/repositories/$DOCKER_REPO/
 
     - name: Log out from Docker Hub
       run: docker logout
