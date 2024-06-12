@@ -4,7 +4,7 @@ Docker container for a Cronicle single-server master node
 
 # Supported tags
 
-* `latest` [Dockerfile](https://raw.githubusercontent.com/itmpsk/docker-cronicle/master/Dockerfile)
+* `0.8.54` [Dockerfile](https://raw.githubusercontent.com/itmpsk/docker-cronicle/blob/0.8.54/Dockerfile)
 
 
 ## latest
