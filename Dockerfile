@@ -1,7 +1,7 @@
-FROM        node:16-alpine
+FROM        node:18-alpine
 LABEL       maintainer="Martin Paserba <info@itmp.sk>"
 
-ARG         CRONICLE_VERSION='0.9.1'
+ARG         CRONICLE_VERSION='0.9.40'
 
 # Docker defaults
 ENV        CRONICLE_base_app_url 'http://localhost:3012'
